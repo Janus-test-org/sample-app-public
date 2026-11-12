@@ -34,3 +34,4 @@ jobs:
     environment: production
     steps:
       - run: echo "Nothing is deployed. This job only records a deployment."
+# SPIKE-3: edited with the App token (Workflows permission).
