@@ -7,6 +7,7 @@ pipelines and deployments. It does nothing useful.
 - `src/greeting.ts` is the whole application: one function.
 - `src/greeting.test.ts` holds its tests.
 - `.gitlab-ci.yml` runs the tests on GitLab.com and records a deployment that deploys nothing.
+- `.github/workflows/ci.yml` does the same on GitHub.
 
 ## Run the tests
 
