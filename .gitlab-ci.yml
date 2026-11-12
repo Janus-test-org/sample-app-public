@@ -1,0 +1,29 @@
+# The pipeline of the sample application on GitLab.com.
+#
+# - `test` runs the tests, for every branch.
+# - `deploy` runs on the default branch only. It deploys nothing: it exists so that the project
+#   has an environment with a deployment to read.
+#
+# It holds no secret and publishes nothing.
+
+default:
+  image: node:24-alpine
+
+stages:
+  - test
+  - deploy
+
+test:
+  stage: test
+  script:
+    - node --version
+    - npm test
+
+deploy:
+  stage: deploy
+  script:
+    - echo "Nothing is deployed. This job only records a deployment."
+  environment:
+    name: production
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
